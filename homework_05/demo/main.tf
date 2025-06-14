@@ -1,5 +1,5 @@
 resource "random_password" "any_uniq_name" {
-  length = 20
+  length = 22
 }
 
 check "health_check" {
@@ -8,7 +8,7 @@ check "health_check" {
   }
 
   assert {
-    condition = data.http.netology_ru.status_code == 200
-    error_message = "${data.http.netology_ru.url} returned an unhealthy status code"
+    condition     = data.http.netology_ru.status_code == 200
+    error_message = "${data.http.netology_ru.url} returned an unhealthy status code "
   }
 }
